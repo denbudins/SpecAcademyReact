@@ -1,0 +1,42 @@
+.section-box_margin{
+    max-width: 560px;
+    padding-top: 100px;
+    margin: 0 auto;
+}
+
+.section-box .info-box{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+@media screen and (min-width: 767px){
+    .section-box{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+    }
+
+    .section-box .info-box{
+        margin-left: 30px;
+    }
+
+    .section-box_margin{
+        max-width: 760px;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .section-box{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+    }
+
+    .section-box .info-box{
+        margin-left: 30px;
+    }
+
+    .section-box_margin{
+        max-width: 1024px;
+    }
+}

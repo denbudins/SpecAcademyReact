@@ -1,0 +1,40 @@
+.more{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 70px;
+}
+
+.more p{
+    max-width: 750px;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.cardContainer{
+    width: 25%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.card{
+    width: calc((100% -25%) - 11px);
+    margin-right: 15px;
+    margin-bottom: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.card:hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.card img{
+    height: 200px;
+    width: 200px;
+    padding: 10px;
+}

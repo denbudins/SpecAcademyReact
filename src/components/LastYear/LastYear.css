@@ -1,0 +1,38 @@
+.lastYear{
+    width: 100%;
+    height: 400px;
+    background-color: #efefef;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.bigCards{
+    width: 1280px;
+    margin: auto;
+}
+
+.bigCards h2{
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.leftColumn{
+    width: 50%;
+    float: left;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    flex-direction: column;
+    height: 350px;
+}
+
+.rightColumn{
+    width: 50%;
+    float: right;
+}
+
+.rightColumn figure{
+    width: 100%;
+    height: 350px;
+    object-fit: contain;
+}
