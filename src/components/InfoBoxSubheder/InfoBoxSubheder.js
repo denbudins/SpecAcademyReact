@@ -1,18 +1,16 @@
 import React from 'react';
-import Location from '../../assets/img/dogadaji/location-icon.png';
-import Time from '../../assets/img/dogadaji/time-icon.png';
-import '../InfoBoxSubheder/InfoBoxSubheder.css';
+import '../InfoBoxSubheder/InfoBoxSubheder.scss';
 
-const InfoBoxSubheder = () => {
+const InfoBoxSubheder = (props) => {
     return(
         <div class="info-box__subheader">
             <div class="info-box__subheader__container">
-                <img src={Location} alt="Lokacija događaja" class="info-box__subheader__container_sizeImege"/>
-                <p class="info-box__subheader__text">Dvorana D09</p>
+                <img src={props.loacation} alt={props.alt1} class="info-box__subheader__container_sizeImege"/>
+                <p class="info-box__subheader__text">{props.children1}</p>
             </div>
             <div class="info-box__subheader__container info-box__subheader__container_margin">
-                <img src={Time} alt="Vrijeme događanja" class="info-box__subheader__container_sizeImege"/>
-                    <p class="info-box__subheader__text">24.3 u 13:45h</p>
+                <img src={props.time} alt={props.alt2} class="info-box__subheader__container_sizeImege"/>
+                    <p class="info-box__subheader__text">{props.children2}</p>
                 </div>
             </div>
     );

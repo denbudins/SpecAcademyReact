@@ -4,7 +4,7 @@ import Spekers from '../../assets/img/speakers.jpg';
 import Calendar from '../../assets/img/calendar.jpg';
 import Partner from '../../assets/img/partner.jpg';
 import Card from '../Card/Card'
-import '../More/More.css';
+import '../More/More.scss';
 
 const More = () => {
     return(

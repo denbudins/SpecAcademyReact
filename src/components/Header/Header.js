@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import Logo from '../../assets/img/logo.png';
-import '../Header/Header.css';
+import '../Header/Header.scss';
 
 const links = {
     speakers: 'Speakers',

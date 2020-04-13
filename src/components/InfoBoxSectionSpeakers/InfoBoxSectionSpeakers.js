@@ -1,8 +1,8 @@
 import React from 'react';
-import InfoBox from '../InfoBox/InfoBox';
+import InfoBox from '../InfoBoxSpeakers/InfoBoxSpeakers';
 import '../InfoBoxSection/InfoBoxSection.scss';
 
-const InfoBoxSection = () => {
+const InfoBoxSectionSpeakers = () => {
     return(
         <section class="section-box section-box_margin">
             <InfoBox/>
@@ -19,4 +19,4 @@ const InfoBoxSection = () => {
     );
 }
 
-export default InfoBoxSection;
+export default InfoBoxSectionSpeakers;

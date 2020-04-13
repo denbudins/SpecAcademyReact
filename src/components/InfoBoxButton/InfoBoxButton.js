@@ -1,5 +1,5 @@
 import React from 'react';
-import '../InfoBoxButton/InfoBoxButton.css';
+import '../InfoBoxButton/InfoBoxButton.scss';
 
 const InfoBoxButton = () => {
     return(

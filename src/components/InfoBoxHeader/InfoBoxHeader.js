@@ -1,5 +1,5 @@
 import React from 'react';
-import '../InfoBoxHeader/InfoBoxHeader.css';
+import '../InfoBoxHeader/InfoBoxHeader.scss';
 
 const InfoBoxHeader = () => {
     return(

@@ -20,15 +20,15 @@
     flex-direction: column;
     border-radius: 15px;
     padding: 20px;
+
+    & h1{
+        color: white;
+    }
 }
 
 .foi{
     color: #be9737;
     font-size: 35px;
-}
-
-.heroContainer h1{
-    color: white;
 }
 
 .datum{

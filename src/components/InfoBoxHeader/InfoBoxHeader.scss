@@ -1,0 +1,17 @@
+.info-box{
+    &__header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+    &__icon{
+        background-image: url(../../assets/img/dogadaji/event-icon.png);
+        width: 50px;
+        height: 40px;
+    }
+
+    &__tekst_margin{
+        margin-left: 15px;
+    }
+}

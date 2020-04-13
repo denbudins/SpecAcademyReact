@@ -1,6 +1,6 @@
 import React from 'react';
 import LastYearImage from '../../assets/img/last-year.jpg';
-import '../LastYear/LastYear.css';
+import '../LastYear/LastYear.scss';
 
 const LastYear = () => {
     return(
