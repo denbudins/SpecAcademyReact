@@ -4,10 +4,10 @@ import InfoBoxAbout from '../InfoBoxAbout/InfoBoxAbout';
 import InfoBoxButton from '../InfoBoxButton/InfoBoxButton';
 import '../InfoBox/InfoBox.scss';
 
-const InfoBoxSpeakers = () => {
+const InfoBoxSpeakers = (props) => {
     return(
         <div class="info-box">
-            <InfoBoxHeader/>
+            <InfoBoxHeader naslov={props.hedling} klasa={props.klasa}/>
             <InfoBoxAbout/>
             <InfoBoxButton/>
         </div>
