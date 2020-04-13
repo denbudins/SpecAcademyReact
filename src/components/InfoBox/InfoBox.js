@@ -1,5 +1,5 @@
 import React from 'react';
-import InfoBoxHeader from '../InfoBoxHeader/InfoBoxHeader';
+import InfoBoxHeaderSpeakers from '../InfoBoxHeaderSpeakers/InfoBoxHeaderSpeakers';
 import InfoBoxSubheader from '../InfoBoxSubheder/InfoBoxSubheder';
 import InfoBoxAbout from '../InfoBoxAbout/InfoBoxAbout';
 import InfoBoxButton from '../InfoBoxButton/InfoBoxButton';
@@ -10,7 +10,7 @@ import '../InfoBox/InfoBox.scss';
 const InfoBox = () => {
     return(
         <div class="info-box">
-            <InfoBoxHeader/>
+            <InfoBoxHeaderSpeakers/>
             <InfoBoxSubheader loacation={Location} alt1="Lokacija događaja" time={Time} alt2="Vrijeme događanja" children1="Dvorana D09" children2="24.3 u 13:45h"/>
             <InfoBoxAbout/>
             <InfoBoxButton/>
