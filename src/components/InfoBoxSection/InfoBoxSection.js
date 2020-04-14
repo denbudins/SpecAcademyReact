@@ -2,19 +2,19 @@ import React from 'react';
 import InfoBox from '../InfoBox/InfoBox';
 import '../InfoBoxSection/InfoBoxSection.scss';
 
-const InfoBoxSection = () => {
+const InfoBoxSection = (props) => {
     return(
-        <section class="section-box section-box_margin">
-            <InfoBox hedling={"How can we benefit from React"} mjesto={"Dvorana D09"} vrijeme={"24.3 u 13:45h"} klasa={"info-box__header__icon_events"}/>
-            <InfoBox hedling={"How can we benefit from React"} mjesto={"Dvorana D10"} vrijeme={"24.3 u 14:45h"} klasa={"info-box__header__icon_events"}/>
-            <InfoBox hedling={"How can we benefit from React"} mjesto={"Dvorana D09"} vrijeme={"24.3 u 14:45h"} klasa={"info-box__header__icon_events"}/>
-            <InfoBox hedling={"How can we benefit from React"} mjesto={"Dvorana D11"} vrijeme={"24.3 u 15:45h"} klasa={"info-box__header__icon_events"}/>
-            <InfoBox hedling={"How can we benefit from React"} mjesto={"Dvorana D12"} vrijeme={"24.3 u 13:45h"} klasa={"info-box__header__icon_events"}/>
-            <InfoBox hedling={"How can we benefit from React"} mjesto={"Dvorana D15"} vrijeme={"24.3 u 13:45h"} klasa={"info-box__header__icon_events"}/>
-            <InfoBox hedling={"How can we benefit from React"} mjesto={"Dvorana D09"} vrijeme={"24.3 u 18:45h"} klasa={"info-box__header__icon_events"}/>
-            <InfoBox hedling={"How can we benefit from React"} mjesto={"Dvorana D10"} vrijeme={"24.3 u 13:45h"} klasa={"info-box__header__icon_events"}/>
-            <InfoBox hedling={"How can we benefit from React"} mjesto={"Dvorana D15"} vrijeme={"24.3 u 13:45h"} klasa={"info-box__header__icon_events"}/>
-            <InfoBox hedling={"How can we benefit from React"} mjesto={"Dvorana D09"} vrijeme={"24.3 u 17:45h"} klasa={"info-box__header__icon_events"}/>
+        <section class="SectionBox SectionBox_margin">
+            <InfoBox naslov={props.naslov} children1={"Dvorana D09"} children2={"24.3 u 13:45h"} klasa={props.klasa}/>
+            <InfoBox naslov={props.naslov} children1={"Dvorana D10"} children2={"24.3 u 14:45h"} klasa={props.klasa}/>
+            <InfoBox naslov={props.naslov} children1={"Dvorana D09"} children2={"24.3 u 14:45h"} klasa={props.klasa}/>
+            <InfoBox naslov={props.naslov} children1={"Dvorana D11"} children2={"24.3 u 15:45h"} klasa={props.klasa}/>
+            <InfoBox naslov={props.naslov} children1={"Dvorana D12"} children2={"24.3 u 13:45h"} klasa={props.klasa}/>
+            <InfoBox naslov={props.naslov} children1={"Dvorana D15"} children2={"24.3 u 13:45h"} klasa={props.klasa}/>
+            <InfoBox naslov={props.naslov} children1={"Dvorana D09"} children2={"24.3 u 18:45h"} klasa={props.klasa}/>
+            <InfoBox naslov={props.naslov} children1={"Dvorana D10"} children2={"24.3 u 13:45h"} klasa={props.klasa}/>
+            <InfoBox naslov={props.naslov} children1={"Dvorana D15"} children2={"24.3 u 13:45h"} klasa={props.klasa}/>
+            <InfoBox naslov={props.naslov} children1={"Dvorana D09"} children2={"24.3 u 17:45h"} klasa={props.klasa}/>
         </section>
     );
 }

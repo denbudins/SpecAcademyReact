@@ -3,12 +3,12 @@ import '../HeroSection/HeroSection.scss';
 
 const HeroSection = () => {
     return(
-        <section class="heroSection">
-            <div class="heroContainer">
+        <section class="HeroSection">
+            <div class="HeroSection-Container">
                 <h1>Tjedan karijera</h1>
-                <p class="foi">FOI</p>
-                <p class="datum">20.10.2020. - 26.10.2020.</p>
-                <button>Prijavi se</button>
+                <p class="HeroSection-Foi">FOI</p>
+                <p class="HeroSection-Datum">20.10.2020. - 26.10.2020.</p>
+                <button className="HeroSection-Gumb">Prijavi se</button>
             </div>
         </section>
     );

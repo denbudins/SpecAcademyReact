@@ -11,11 +11,11 @@ const links = {
 const Header = () => {
     return(
         <header>
-            <div class="containerHeder">
+            <div class="ContainerHeder">
                 <Link to='/'>
-                    <img src={Logo} alt="FOI logo" class="logo"/>
+                    <img src={Logo} alt="FOI logo" class="Logo"/>
                 </Link>
-                <nav class="navigacija">
+                <nav class="Navigacija">
                     <Link to='/events'>{links.events}</Link>
                     <Link to='/speakers'>{links.speakers}</Link>
                 </nav>  
