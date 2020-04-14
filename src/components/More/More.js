@@ -13,8 +13,8 @@ const More = () => {
             <button>Saznaj više</button>
             <div class="cardContainer">
                 <Card image={About} alt="About">O tjednu karijera</Card>
-                <Card image={Spekers} alt="Spekers">Izlagači</Card>
-                <Card image={Calendar} alt="Calendar">Raspored događanja</Card>
+                <Card veza={'/speakers'} image={Spekers} alt="Spekers">Izlagači</Card>
+                <Card veza={'/events'} image={Calendar} alt="Calendar">Raspored događanja</Card>
                 <Card image={Partner} alt="Partner">Partneri</Card>
             </div>
         </section>
