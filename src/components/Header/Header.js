@@ -1,27 +1,29 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import Logo from '../../assets/img/logo.png';
-import '../Header/Header.scss';
+import LogoSlika from '../../assets/img/logo.png';
+import {Header, ContainerHeder, Logo, Navigacija} from './HeaderStyle';
 
 const links = {
     speakers: 'Speakers',
     events: 'Events',
 }
 
-const Header = () => {
+const HeaderStranice = () => {
     return(
-        <header>
-            <div class="ContainerHeder">
+        <>
+        <Header>
+            <ContainerHeder>
                 <Link to='/'>
-                    <img src={Logo} alt="FOI logo" class="Logo"/>
+                    <Logo src={LogoSlika} alt="Foi logo"></Logo>
                 </Link>
-                <nav class="Navigacija">
+                <Navigacija>
                     <Link to='/events'>{links.events}</Link>
                     <Link to='/speakers'>{links.speakers}</Link>
-                </nav>  
-            </div>
-        </header>
+                </Navigacija>
+            </ContainerHeder>
+        </Header>
+        </>
     );
 }
 
-export default Header;
+export default HeaderStranice;

@@ -1,13 +1,15 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import '../Card/Card.scss';
+import {Kartica, Slika ,Naslov} from './CardStyle';
 
 const Card = (props) => {
     return(
-        <div class="Card">
-            <Link to={props.veza}><img src={props.image} alt={props.alt}/></Link>
-            <h3>{props.children}</h3>
-        </div>
+        <Kartica>
+            <Link to={props.veza}>
+                <Slika src={props.image} alt={props.alt}></Slika>
+            </Link>
+            <Naslov>{props.children}</Naslov>
+        </Kartica>
     );
 }
 
