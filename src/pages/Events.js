@@ -1,11 +1,39 @@
-import React from 'react';
+import React, { useState, useEffect  } from 'react';
 
 import InfoBoxSection from '../components/InfoBoxSection/InfoBoxSection';
+import InfoBox from '../components/InfoBox/InfoBox';
+import eventsMocks from '../lib/events';
+import Loader from '../components/Loader/LoaderSpiner';
+import SrchBar from '../components/SearchBar/SearchBar';
 
 const Events = () => {
+    const [events, setEvents] = useState('');
+
+    useEffect(() => {
+        setTimeout(()=>{
+            setEvents(eventsMocks);
+        }, 1000);
+    });
+
+    const showEvents = () => {
+        return events.map((events, index) =>(
+            <InfoBox
+                key={index}
+                klasa={"InfoBox-Header-Icon InfoBox-Header-Icon_events"}
+                title={events.title}
+                location={events.location}
+                dateTime={events.dateTime}
+                about={events.about}
+            />
+        ));
+    }
     return(
         <>
-            <InfoBoxSection klasa={"InfoBox-Header-Icon InfoBox-Header-Icon_events"} naslov={"How can we benefit from React"}/>
+            <h1>Događanja</h1>
+            <SrchBar search="Search events.."/>
+            <InfoBoxSection>
+                {events === '' ? <Loader/> : showEvents()}
+            </InfoBoxSection>
         </>
     );
 }
