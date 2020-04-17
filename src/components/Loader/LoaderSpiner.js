@@ -1,17 +1,17 @@
 import React from 'react';
 import Loader from "react-loader-spinner";
-import '../Loader/LoaderSpiner.scss';
+import {LoaderSpinner} from './LoaderSpinerStyle';
 
 const LoaderSpiner = () => {
     return(
-      <div className="spinner">
-      <Loader
+      <LoaderSpinner>
+        <Loader
         type="ThreeDots"
         color="#00BFFF"
         height={80}
         width={80}
-      />
-    </div>
+        />
+      </LoaderSpinner>
     );
 }
 

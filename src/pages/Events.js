@@ -19,7 +19,7 @@ const Events = () => {
         return events.map((events, index) =>(
             <InfoBox
                 key={index}
-                klasa={"InfoBox-Header-Icon InfoBox-Header-Icon_events"}
+                type = {"event"}
                 title={events.title}
                 location={events.location}
                 dateTime={events.dateTime}

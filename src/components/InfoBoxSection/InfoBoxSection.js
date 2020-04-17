@@ -1,11 +1,9 @@
 import React from 'react';
-import '../InfoBoxSection/InfoBoxSection.scss';
+import {Section} from './InfoBoxSectionStyle';
 
 const InfoBoxSection = (props) => {
     return(
-        <section class="SectionBox SectionBox_margin">
-            {props.children}
-        </section>
+        <Section>{props.children}</Section>
     );
 }
 

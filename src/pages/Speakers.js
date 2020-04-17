@@ -19,7 +19,7 @@ const Speakers = () => {
         return speakers.map((speakers, index) =>(
             <InfoBox
                 key={index}
-                klasa={"InfoBox-Header-Icon InfoBox-Header-Icon_speakers"}
+                type = {"speakers"}
                 title={speakers.title}
                 about={speakers.about}
             />

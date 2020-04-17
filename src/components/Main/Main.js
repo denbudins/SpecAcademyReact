@@ -1,11 +1,9 @@
 import React from 'react';
-import './Main.scss';
+import {MainComponent} from './MainStyle';
 
 const Main = (props) => {
     return(
-        <main>
-            {props.children}
-        </main>
+        <MainComponent>{props.children}</MainComponent>
     );
 }
 

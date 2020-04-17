@@ -1,48 +1,42 @@
 import React from 'react';
 import Location from '../../assets/img/dogadaji/location-icon.png';
 import Time from '../../assets/img/dogadaji/time-icon.png';
-import '../InfoBox/InfoBox.scss';
+import {InfoBoxMain, Header, Tekst, Subheader, Container, Icon, About, Prijava, Naslov, HeaderIcon} from './InfoBoxStyle';
+import IconUrlSpeakers from '../../assets/img/dogadaji/speakers-icon.png';
+import IconUrlEvents from '../../assets/img/dogadaji/event-icon.png';
 
 const InfoBox = (props) => {
-    if (props.klasa === "InfoBox-Header-Icon InfoBox-Header-Icon_events"){
+    if (props.type === "event"){
         return(
-            <div class="InfoBox">
-                <div class="InfoBox-Header">
-                    <div class={props.klasa}></div>
-                    <h2 class="InfoBox-Header-Tekst InfoBox-Header-Tekst_margin">{props.title}</h2>
-                </div>
-                <div class="InfoBox-Subheader">
-                    <div class="InfoBox-Subheader-Container">
-                        <img src={Location} alt="Lokacija događaja" class="InfoBox-Subheader-Container_sizeImege"/>
-                        <p class="InfoBox-Subheader-Text">{props.location}</p>
-                    </div>
-                    <div class="InfoBox-Subheader-Container InfoBox-Subheader-Container_margin">
-                        <img src={Time} alt="Datum i vrijeme događaja" class="InfoBox-Subheader-Container_sizeImege"/>
-                        <p class="InfoBox-Subheader-Text">{props.dateTime}</p>
-                    </div>
-                </div>
-                <div class="InfoBox-About">
-                    <p>{props.about}</p>
-                </div>
-                <div>
-                    <a href="/" class="InfoBox-Prijava InfoBox-Prijava_fontSizeS"><p>Prijavi se na predavanje</p></a>
-                </div>
-            </div>
+            <InfoBoxMain>
+                <Header>
+                    <HeaderIcon iconUrl={IconUrlEvents}></HeaderIcon>
+                    <Naslov>{props.title}</Naslov>
+                </Header>
+                <Subheader>
+                    <Container>
+                        <Icon src={Location} alt="Lokacija događaja"></Icon>
+                        <Tekst>{props.location}</Tekst>
+                    </Container>
+                    <Container>
+                        <Icon src={Time} alt="Datum i vrijeme događaja"></Icon>
+                        <Tekst>{props.dateTime}</Tekst>
+                    </Container>
+                </Subheader>
+                <About>{props.about}</About>
+                <Prijava href="/">Prijavi se na predavanje</Prijava>
+            </InfoBoxMain>
         )
-    }else if(props.klasa === "InfoBox-Header-Icon InfoBox-Header-Icon_speakers"){
+    }else if(props.type === "speakers"){
         return(
-            <div class="InfoBox">
-                <div class="InfoBox-Header">
-                    <div class={props.klasa}></div>
-                    <h2 class="InfoBox-Header-Tekst InfoBox-Header-Tekst_margin">{props.title}</h2>
-                </div>
-                <div class="InfoBox-About">
-                    <p>{props.about}</p>
-                </div>
-                <div>
-                    <a href="/" class="InfoBox-Prijava InfoBox-Prijava_fontSizeS"><p>Prijavi se na predavanje</p></a>
-                </div>
-            </div>
+            <InfoBoxMain>
+                <Header>
+                    <HeaderIcon iconUrl={IconUrlSpeakers}></HeaderIcon>
+                    <Naslov>{props.title}</Naslov>
+                </Header>
+                <About>{props.about}</About>
+                <Prijava href="/">Prati predavača</Prijava>
+            </InfoBoxMain>
         )
     }
     
