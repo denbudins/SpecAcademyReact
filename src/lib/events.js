@@ -17,7 +17,7 @@ const events =
         link: '/',
     },
     {
-        title: 'How can we benifit from React',
+        title: 'Ovo je primjer za filtriranje 1',
         location: 'Dvorana 10',
         dateTime: '23.03 u 13:45h',
         about:

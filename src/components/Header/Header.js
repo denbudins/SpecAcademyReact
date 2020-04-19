@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import LogoSlika from '../../assets/img/logo.png';
 import {Header, ContainerHeder, Logo, Navigacija} from './HeaderStyle';
+import './Header.scss';
 
 const links = {
     speakers: 'Speakers',

@@ -29,4 +29,12 @@ export const Navigacija = styled.nav`
         margin: 8px;
         font-size: 20px;
     }
+
+    a:active{
+        color: yellow;
+    }
+
+    a:hover{
+        color: yellow;
+    }
 `;

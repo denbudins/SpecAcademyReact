@@ -29,7 +29,7 @@ const Speakers = () => {
     return(
         <>
             <h1>Sudionici</h1>
-            <SrchBar search="Search speakers.."/>
+            {speakers === '' ? <SrchBar search="Search speakers.." /*onValueChange={hendleSrche}*/ aktiva = {false}/> : <SrchBar search="Search speakers.." /*onValueChange={hendleSrche}*/ aktiva = {true}/>}
             <InfoBoxSection> 
                 {speakers === '' ? <Loader/> : showSpeakers()}
             </InfoBoxSection> 

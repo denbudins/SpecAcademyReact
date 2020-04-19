@@ -15,8 +15,16 @@ const Events = () => {
         }, 1000);
     });
 
-    const showEvents = () => {
-        return events.map((events, index) =>(
+    const hendleSrche = (unos) => {
+        return setEvents(events.filter(item =>
+            item.title.toLowerCase().includes(unos.toLowerCase())))
+    };
+    return(
+        <>
+            <h1>Događanja</h1>
+            {events === '' ? <SrchBar search="Search events.." onValueChange={hendleSrche} aktiva = {false}/> : <SrchBar search="Search events.." onValueChange={hendleSrche} aktiva = {true}/>}
+            <InfoBoxSection>
+                {events === '' ? <Loader/> : events.map((events, index) =>(
             <InfoBox
                 key={index}
                 type = {"event"}
@@ -25,14 +33,7 @@ const Events = () => {
                 dateTime={events.dateTime}
                 about={events.about}
             />
-        ));
-    }
-    return(
-        <>
-            <h1>Događanja</h1>
-            <SrchBar search="Search events.."/>
-            <InfoBoxSection>
-                {events === '' ? <Loader/> : showEvents()}
+        ))}
             </InfoBoxSection>
         </>
     );
