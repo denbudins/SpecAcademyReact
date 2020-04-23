@@ -8,16 +8,19 @@ import SrchBar from '../components/SearchBar/SearchBar';
 
 const Events = () => {
     const [events, setEvents] = useState('');
+    const [eventsSrch, setEventsSrch] = useState('');
 
     useEffect(() => {
         setTimeout(()=>{
             setEvents(eventsMocks);
+            setEventsSrch(eventsMocks)
         }, 1000);
-    });
+    },[]);
 
     const hendleSrche = (unos) => {
-        return setEvents(events.filter(item =>
-            item.title.toLowerCase().includes(unos.toLowerCase())))
+        const pretraga = eventsSrch.filter(item =>
+            item.title.toLowerCase().includes(unos.toLowerCase()))
+        return setEvents(pretraga)
     };
     return(
         <>

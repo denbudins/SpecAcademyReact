@@ -8,6 +8,7 @@ import Main from './components/Main/Main';
 import Home from './pages/Home';
 import Events from './pages/Events'
 import Speakers from './pages/Speakers'
+import ToDos from './pages/ToDos'
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route exact path='/' component={Home}/>
         <Route path='/events' component={Events}/>
         <Route path='/speakers' component={Speakers}/>
+        <Route path='/todos' component={ToDos}/>
       </Main>
     </div>
   );
