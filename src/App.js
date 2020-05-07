@@ -6,9 +6,10 @@ import Header from './components/Header/Header';
 import Main from './components/Main/Main';
 
 import Home from './pages/Home';
-import Events from './pages/Events'
-import Speakers from './pages/Speakers'
-import ToDos from './pages/ToDos'
+import Events from './pages/Events';
+import Speakers from './pages/Speakers';
+import Register from './pages/Register';
+import Login from './pages/Login';
 
 
 function App() {
@@ -19,7 +20,8 @@ function App() {
         <Route exact path='/' component={Home}/>
         <Route path='/events' component={Events}/>
         <Route path='/speakers' component={Speakers}/>
-        <Route path='/todos' component={ToDos}/>
+        <Route path='/register' component={Register}/>
+        <Route path='/login' component={Login}/>
       </Main>
     </div>
   );

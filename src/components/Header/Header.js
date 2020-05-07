@@ -7,6 +7,8 @@ import './Header.scss';
 const links = {
     speakers: 'Speakers',
     events: 'Events',
+    register: 'Register',
+    login: 'Login',
 }
 
 const HeaderStranice = () => {
@@ -18,8 +20,8 @@ const HeaderStranice = () => {
                     <Logo src={LogoSlika} alt="Foi logo"></Logo>
                 </Link>
                 <Navigacija>
-                    <Link to='/events'>{links.events}</Link>
-                    <Link to='/speakers'>{links.speakers}</Link>
+                    <Link to='/register'>{links.register}</Link>
+                    <Link to='/login'>{links.login}</Link>
                 </Navigacija>
             </ContainerHeder>
         </Header>
