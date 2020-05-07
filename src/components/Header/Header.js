@@ -2,11 +2,12 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import LogoSlika from '../../assets/img/logo.png';
 import {Header, ContainerHeder, Logo, Navigacija} from './HeaderStyle';
-import './Header.scss';
 
 const links = {
     speakers: 'Speakers',
     events: 'Events',
+    registration: 'Registration',
+    login: 'Login',
 }
 
 const HeaderStranice = () => {
@@ -20,6 +21,8 @@ const HeaderStranice = () => {
                 <Navigacija>
                     <Link to='/events'>{links.events}</Link>
                     <Link to='/speakers'>{links.speakers}</Link>
+                    <Link to='/registration'>{links.registration}</Link>
+                    <Link to='/login'>{links.login}</Link>
                 </Navigacija>
             </ContainerHeder>
         </Header>
