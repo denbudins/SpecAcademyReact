@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-// If the component that needs to acces router props is not direct child
-// of the Route component, then you need to import and define useHistory.
-// After that you can access history so you can programatically go to the
-// desired route.
+import { useForm, ErrorMessage } from "react-hook-form";
 import { useHistory } from 'react-router-dom';
+
+import { loginUser } from '../../services/login';
+import Loader from '../Loader/LoaderSpiner';
 
 import {
     Form,
@@ -19,11 +19,30 @@ import {
 
 const LoginForm = (props) => {
     const history = useHistory();
+    const { register, errors, handleSubmit, setValue } = useForm();
 
-    const handleSubmit = (e)  => {}
+    const[loder, setLoder] = useState(false);
+    const[errorLogin, setErrorLogin] = useState('');
+
+    const onSubmit = data  => {
+        setLoder(true);
+        setTimeout(()=>{
+            loginUser(data).then(res => {
+            if(res.message && res.token){
+                localStorage.setItem('token', res.token);
+                history.push('/');
+            }else{
+                setErrorLogin("Username or password are incorrect!")
+                setLoder(false);
+                setValue("username", data.username);
+                setValue("password", data.password);
+            }
+        });
+        }, 2000);
+    }
 
     const loginForm =
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit(onSubmit)}>
             <FormRow>
                 <FormAdditionalLink to="/register">You don't have an account? Click here to register!</FormAdditionalLink>
             </FormRow>
@@ -31,26 +50,34 @@ const LoginForm = (props) => {
                 <FormLabel htmlFor="username">Username</FormLabel>
                 <FormInput
                     type="text"
-                    id="username"
                     name="username"
-                    required />
+                    ref={register({ required: "Username is required" })} 
+                    />
+                    <ErrorMessage errors={errors} name="username" as={<FormGeneralError />}  />
             </FormRow>
             <FormRow>
                 <FormLabel htmlFor="password">Password</FormLabel>
                 <FormInput
                     type="password"
-                    id="password"
                     name="password"
-                    required />
+                    ref={register({ required: "Password is required" })}     
+                    />
+                <ErrorMessage errors={errors} name="password" as={<FormGeneralError />} />
             </FormRow>
             <FormButtonRow>
                 <FormButton>Login</FormButton>
             </FormButtonRow>
+            { errorLogin && <FormGeneralError>{errorLogin}</FormGeneralError>}
         </Form>;
 
     return (
         <>
-            {loginForm}
+            {loder ? <>
+                <FormSubmitSuccess>Successfull login, soon you will be redirected to homepage!</FormSubmitSuccess>
+                <Loader />
+                </>
+            : loginForm }
+
         </>
     );
 }
