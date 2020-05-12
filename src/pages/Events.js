@@ -2,9 +2,10 @@ import React, { useState, useEffect  } from 'react';
 
 import InfoBoxSection from '../components/InfoBoxSection/InfoBoxSection';
 import InfoBox from '../components/InfoBox/InfoBox';
-import eventsMocks from '../lib/events';
 import Loader from '../components/Loader/LoaderSpiner';
 import SrchBar from '../components/SearchBar/SearchBar';
+
+import {getEvents} from '../services/events';
 
 const Events = () => {
     const [events, setEvents] = useState('');
@@ -12,8 +13,10 @@ const Events = () => {
 
     useEffect(() => {
         setTimeout(()=>{
-            setEvents(eventsMocks);
-            setEventsSrch(eventsMocks)
+            getEvents(localStorage.getItem('token')).then(res => {
+                setEvents(res.events);
+                setEventsSrch(res.events)
+            }) 
         }, 1000);
     },[]);
 

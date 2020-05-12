@@ -2,9 +2,10 @@ import React, { useState, useEffect  } from 'react';
 
 import InfoBoxSection from '../components/InfoBoxSection/InfoBoxSection';
 import InfoBox from '../components/InfoBox/InfoBox';
-import speakersMocks from '../lib/speakers';
 import Loader from '../components/Loader/LoaderSpiner';
 import SrchBar from '../components/SearchBar/SearchBar';
+
+import {getSpeakers} from '../services/speakers';
 
 const Speakers = () => {
     const [speakers, setSpeakers] = useState('');
@@ -12,8 +13,10 @@ const Speakers = () => {
 
     useEffect(() => {
         setTimeout(()=>{
-            setSpeakers(speakersMocks);
-            setSpeakersSrch(speakersMocks)
+            getSpeakers(localStorage.getItem('token')).then(res => {
+                setSpeakers(res.speakers);
+                setSpeakersSrch(res.speakers)
+            }) 
         }, 1000);
     }, []);
 
