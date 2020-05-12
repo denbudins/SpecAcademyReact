@@ -6,7 +6,7 @@ import {Header, ContainerHeder, Logo, Navigacija} from './HeaderStyle';
 const links = {
     speakers: 'Speakers',
     events: 'Events',
-    registration: 'Registration',
+    register: 'Register',
     login: 'Login',
 }
 
@@ -21,7 +21,7 @@ const HeaderStranice = () => {
                 <Navigacija>
                     <Link to='/events'>{links.events}</Link>
                     <Link to='/speakers'>{links.speakers}</Link>
-                    <Link to='/registration'>{links.registration}</Link>
+                    <Link to='/register'>{links.register}</Link>
                     <Link to='/login'>{links.login}</Link>
                 </Navigacija>
             </ContainerHeder>

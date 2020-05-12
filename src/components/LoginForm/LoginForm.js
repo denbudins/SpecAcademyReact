@@ -20,6 +20,8 @@ import {
 const LoginForm = (props) => {
     const history = useHistory();
 
+    const handleSubmit = (e)  => {}
+
     const loginForm =
         <Form onSubmit={handleSubmit}>
             <FormRow>
