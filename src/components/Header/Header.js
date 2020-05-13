@@ -43,7 +43,7 @@ const HeaderStranice = () => {
                             <Link to='/login'>{links.login}</Link>
                         </> 
                     }
-                    {isAuth && <Link onClick={handleLogout}>{links.login}</Link>}
+                    {isAuth && <Link onClick={handleLogout}>{links.logout}</Link>}
                 </Navigacija>
             </ContainerHeder>
         </Header>
