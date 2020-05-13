@@ -30,7 +30,7 @@ const LoginForm = (props) => {
             loginUser(data).then(res => {
             if(res.message && res.token){
                 localStorage.setItem('token', res.token);
-                history.push('/');
+                history.replace('/');
             }else{
                 setErrorLogin("Username or password are incorrect!")
                 setLoder(false);

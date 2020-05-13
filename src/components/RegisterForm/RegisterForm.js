@@ -19,7 +19,9 @@ import {
 
 const RegisterForm = (props) => {
     const history = useHistory();
-    const { register, errors, handleSubmit, setValue } = useForm();
+    const { register, errors, handleSubmit, setValue } = useForm({
+        validateCriteriaMode: "all"
+    });
 
     const[errorUser, setErrorUser] = useState('');
     const[errorPass, setErrorPass] = useState('');
@@ -60,7 +62,12 @@ const RegisterForm = (props) => {
                 <FormInput
                     type="text"
                     name="username"
-                    ref={register({ required: "Username is required" })} 
+                    ref={register({ required: "Username is required",
+                    minLength: {
+                            value: 5,
+                            message: "Username must have minimum 5 characters."
+                    }
+                    })}    
                     />
                     <ErrorMessage errors={errors} name="username" as={<FormInputValidation />} />
                     {errorUser && <FormInputValidation>{errorUser}</FormInputValidation>}
@@ -70,7 +77,12 @@ const RegisterForm = (props) => {
                 <FormInput
                     type="password"
                     name="password"
-                    ref={register({ required: "Password is required" })}     
+                    ref={register({ required: "Password is required",
+                    minLength: {
+                            value: 8,
+                            message: "Password must have minimum 8 characters."
+                    }
+                    })}     
                     />
                 <ErrorMessage errors={errors} name="password" as={<FormInputValidation />} />
                 {errorPass && <FormInputValidation>{errorPass}</FormInputValidation>}

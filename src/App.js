@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
@@ -13,13 +13,22 @@ import Login from './pages/Login';
 
 
 function App() {
+
+  const PrivateRoute = ({ component: Component, ...rest }) => (
+    <Route {...rest} render={(props) => (
+      localStorage.getItem('token') !== null
+        ? <Component {...props} />
+        : <Redirect to='/login' />
+    )} />
+  );
+  
   return (
     <div className="App">
-      <Header/>
+      <Header />
       <Main>
         <Route exact path='/' component={Home}/>
-        <Route path='/events' component={Events}/>
-        <Route path='/speakers' component={Speakers}/>
+        <PrivateRoute  path='/events' component={Events}/>
+        <PrivateRoute  path='/speakers' component={Speakers}/>
         <Route path='/register' component={Register}/>
         <Route path='/login' component={Login}/>
       </Main>
