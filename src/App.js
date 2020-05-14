@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Route, Redirect } from 'react-router-dom';
+import {AuthProvider} from './context/AuthContext';
 
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
@@ -10,7 +11,6 @@ import Events from './pages/Events';
 import Speakers from './pages/Speakers';
 import Register from './pages/Register';
 import Login from './pages/Login';
-
 
 function App() {
 
@@ -23,9 +23,10 @@ function App() {
   );
   
   return (
-    
-    <div className="App">
+    <>
+    <AuthProvider>
       <Header />
+    </AuthProvider>
       <Main>
         <Route exact path='/' component={Home}/>
         <PrivateRoute  path='/events' component={Events}/>
@@ -33,7 +34,7 @@ function App() {
         <Route path='/register' component={Register}/>
         <Route path='/login' component={Login}/>
       </Main>
-    </div>
+    </>
   );
 }
 
