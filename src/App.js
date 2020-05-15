@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { Route, Redirect } from 'react-router-dom';
 import {AuthProvider} from './context/AuthContext';
@@ -13,6 +13,7 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 
 function App() {
+  const [isLoggedIn, setisLoggedIn] = useState(false);
 
   const PrivateRoute = ({ component: Component, ...rest }) => (
     <Route {...rest} render={(props) => (
@@ -24,9 +25,8 @@ function App() {
   
   return (
     <>
-    <AuthProvider>
+    <div className="App">
       <Header />
-    </AuthProvider>
       <Main>
         <Route exact path='/' component={Home}/>
         <PrivateRoute  path='/events' component={Events}/>
@@ -34,6 +34,7 @@ function App() {
         <Route path='/register' component={Register}/>
         <Route path='/login' component={Login}/>
       </Main>
+    </div>
     </>
   );
 }
