@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import LogoSlika from '../../assets/img/logo.png';
 import {Header, ContainerHeder, Logo, Navigacija} from './HeaderStyle';
 import {AuthContext} from "../../context/AuthContext";
+import { useHistory } from 'react-router-dom';
 
 const links = {
     speakers: 'Speakers',
@@ -13,11 +14,14 @@ const links = {
 }
 
 const HeaderStranice = (props) => {
-    const isLoggedIn = useContext(AuthContext);
+    const [isLogedIn, setIsLogedIn] = useContext(AuthContext);
+    const history = useHistory();
 
     const handleLogout = (e) => {
         e.preventDefault();
         localStorage.removeItem('token');
+        setIsLogedIn(false);
+        history.replace('/');
     }
 
     return(
@@ -30,7 +34,7 @@ const HeaderStranice = (props) => {
                 <Navigacija>
                     <Link to='/events'>{links.events}</Link>
                     <Link to='/speakers'>{links.speakers}</Link>
-                        {isLoggedIn ?
+                        {isLogedIn ?
                             <Link onClick={handleLogout}>{links.logout}</Link>
                             :
                             <>
