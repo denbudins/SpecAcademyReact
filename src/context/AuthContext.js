@@ -8,7 +8,7 @@ const AuthProvider = (props) => {
     const [isLogedIn, setIsLogedIn] = useState(false);
 
     return(
-        <AuthContext.Provider value={isLogedIn}>
+        <AuthContext.Provider value={[isLogedIn, setIsLogedIn]}>
             {props.children}
         </AuthContext.Provider>
     );
