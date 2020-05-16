@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, {useContext, useState}  from 'react';
 import { useForm, ErrorMessage } from "react-hook-form";
 import { useHistory } from 'react-router-dom';
 
 import { loginUser } from '../../services/login';
 import Loader from '../Loader/LoaderSpiner';
+import {AuthContext} from "../../context/AuthContext";
 
 import {
     Form,
@@ -19,6 +20,7 @@ import {
 
 const LoginForm = (props) => {
     const history = useHistory();
+    const [isLogedIn, setIsLogedIn] = useContext(AuthContext);
     const { register, errors, handleSubmit, setValue } = useForm();
 
     const[loder, setLoder] = useState(false);
@@ -30,6 +32,7 @@ const LoginForm = (props) => {
             loginUser(data).then(res => {
             if(res.message && res.token){
                 localStorage.setItem('token', res.token);
+                setIsLogedIn(true);
                 history.replace('/');
             }else{
                 setErrorLogin("Username or password are incorrect!")
