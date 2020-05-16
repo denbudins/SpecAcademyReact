@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import { Route, Redirect } from 'react-router-dom';
 import {AuthProvider} from './context/AuthContext';
@@ -13,8 +13,6 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 
 function App() {
-  const [isLoggedIn, setisLoggedIn] = useState(false);
-
   const PrivateRoute = ({ component: Component, ...rest }) => (
     <Route {...rest} render={(props) => (
       localStorage.getItem('token') !== null
@@ -26,6 +24,7 @@ function App() {
   return (
     <>
     <div className="App">
+    <AuthProvider>
       <Header />
       <Main>
         <Route exact path='/' component={Home}/>
@@ -34,6 +33,7 @@ function App() {
         <Route path='/register' component={Register}/>
         <Route path='/login' component={Login}/>
       </Main>
+    </AuthProvider> 
     </div>
     </>
   );
