@@ -1,4 +1,4 @@
-import React, {useState, createContext} from 'react';
+import React, {useState, createContext, useEffect} from 'react';
 
 //Define context
 const AuthContext = createContext();
@@ -6,6 +6,10 @@ const AuthContext = createContext();
 //Define provider
 const AuthProvider = (props) => {
     const [isLogedIn, setIsLogedIn] = useState(false);
+
+    useEffect(() => {
+        if(localStorage.getItem('token') !== null && isLogedIn === false) setIsLogedIn(true);
+    }, [isLogedIn]);
 
     return(
         <AuthContext.Provider value={[isLogedIn, setIsLogedIn]}>
